@@ -14,6 +14,7 @@ It is a Books auto-complete application providing the auto-complete of books nam
 - Public
   - style.css
   - index.html
+  - script.js
 - src
   - server.js
   - handler.js
