@@ -1,0 +1,23 @@
+{
+  "name": "Books-autocomplete",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fack2/Books-autocomplete.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fack2/Books-autocomplete/issues"
+  },
+  "homepage": "https://github.com/fack2/Books-autocomplete#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
