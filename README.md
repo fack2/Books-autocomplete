@@ -23,6 +23,6 @@ It is a Books auto-complete application providing the auto-complete of books nam
 
 
 ### Team
-- (Nadeen)[https://github.com/Nadeen123]
-- (Duaa)[https://github.com/DuaaH]
-- (Someya)[https://github.com/someyaaltous]
+- [Nadeen](https://github.com/Nadeen123)
+- [Duaa](https://github.com/DuaaH)
+- [Someya](https://github.com/someyaaltous)
