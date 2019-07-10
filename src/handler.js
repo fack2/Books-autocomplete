@@ -1,7 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 
-
 const homeHandler = (request, response) => {
   const filePath = path.join(__dirname, "..", "public", "index.html");
   fs.readFile(filePath, (error, file) => {
@@ -48,10 +47,9 @@ const postHandler = (request, response, url) => {
       response.writeHead(200, { "Content-Type": "application/json" });
       const arr = JSON.parse(file);
       const textInput = url.split("/")[2];
-      const decodedInput =  decodeURI(textInput);
-      const matched = JSON.stringify(findMatch(arr,decodedInput));
+      const decodedInput = decodeURI(textInput);
+      const matched = JSON.stringify(findMatch(arr, decodedInput));
       response.end(matched);
-
     }
   });
 };
@@ -64,8 +62,8 @@ function findMatch(data, text) {
   var arrayofresult = [];
   var counter = 0;
   for (var i = 0; i < newArr.length; i++) {
-    if (newArr[i].title.substr(0,text.length).toUpperCase() === text) {
-      arrayofresult.push(newArr[i].title);
+    if (newArr[i].title.substr(0, text.length).toUpperCase() === text) {
+      arrayofresult.push(newArr[i]);
       counter++;
       if (counter == 5) {
         break;
