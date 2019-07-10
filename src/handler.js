@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
+
 const homeHandler = (request, response) => {
   const filePath = path.join(__dirname, "..", "public", "index.html");
   fs.readFile(filePath, (error, file) => {
@@ -46,40 +47,34 @@ const postHandler = (request, response, url) => {
     } else {
       response.writeHead(200, { "Content-Type": "application/json" });
       const arr = JSON.parse(file);
-      //const arr2 = JSON.stringify(file);
+      const textInput = url.split("/")[2];
+      const decodedInput =  decodeURI(textInput);
+      const matched = JSON.stringify(findMatch(arr,decodedInput));
+      response.end(matched);
 
-      // findMatch(arr, findMatch(arr, url.split("/")[2]));
-      console.log(findMatch(arr, url.split("/")[2]));
-      response.end(file);
-      //  console.log(JSON.parse(file));
     }
   });
 };
 
 function findMatch(data, text) {
-  //console.log("array", data[0].title);
-
-  //  console.log("textt", text);
   var newArr = [...data];
-  if (typeof text === "string") {
+  if (text.length !== 0 && typeof text === "string") {
     text = text.toUpperCase();
   }
   var arrayofresult = [];
   var counter = 0;
   for (var i = 0; i < newArr.length; i++) {
-    if (newArr[i].title.indexOf(text) === 0) {
+    if (newArr[i].title.substr(0,text.length).toUpperCase() === text) {
       arrayofresult.push(newArr[i].title);
       counter++;
-      console.log(",,,,,");
       if (counter == 5) {
         break;
       }
     }
   }
-  //console.log("textt", arrayofresult);
-
   return arrayofresult;
 }
+
 module.exports = {
   homeHandler,
   publicHandler,
