@@ -54,6 +54,18 @@ div {
   color: gray;
   font-size: 50%;
 }
+
+button {
+  background-color: #ff9c33;
+  border-radius: 5rem;
+  height: 30px;
+  width: 30px;
+  display: block;
+}
+button:hover {
+  background: #90ff33;
+}
+
 @media (min-width: 800px) {
   body {
     background-image: url("https://www.nic.lat/wp-content/uploads/2019/01/bigstock-Stack-Of-Books-70033240.jpg");
@@ -97,5 +109,20 @@ div {
     text-align: center;
     background-color: rgba(192, 192, 192, 0.3);
     font-weight: bold;
+  }
+  ::-webkit-input-placeholder {
+    color: gray;
+    font-size: 50%;
+  }
+
+  button {
+    background-color: #ff9c33;
+    border-radius: 5rem;
+    height: 30px;
+    width: 30px;
+    display: block;
+  }
+  button:hover {
+    background: #90ff33;
   }
 }
